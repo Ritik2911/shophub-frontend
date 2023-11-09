@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+body {
+  transition: all 0.3s ease-in-out; /* Example transition effect */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.dotted-light {
+  --dot-bg: #f1d6c4;
+  --dot-color: #dfa57f ;
+  --dot-size: 2px;
+  --dot-space: 22px;
+	background:
+		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 8%) center / var(--dot-space) var(--dot-space),
+		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 8%) center / var(--dot-space) var(--dot-space),
+		var(--dot-color);
+    box-shadow: inset 0 0 4rem 1.5rem rgba(255, 255, 255, 1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.dotted-dark {
+  --dot-bg: #032833;
+  --dot-color: #0576f8 ;
+  --dot-size: 2px;
+  --dot-space: 22px;
+	background:
+		linear-gradient(90deg, var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 8%) center / var(--dot-space) var(--dot-space),
+		linear-gradient(var(--dot-bg) calc(var(--dot-space) - var(--dot-size)), transparent 8%) center / var(--dot-space) var(--dot-space),
+		var(--dot-color);
+    box-shadow: inset 0 0 4rem 1.5rem #000814;
+}
+
+@media (max-width: 400px) {
+  .menu-icon {
+    display: initial;
+    margin-left: 20px;
+    cursor: pointer;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  nav > ul {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  nav {
+    justify-content: flex-end;
+    padding: 0;
+    padding-right: 20px;
   }
 }
