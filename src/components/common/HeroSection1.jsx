@@ -1,6 +1,5 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { MdArrowForwardIos } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { setByAESC, setByDESC, setByLatest } from "../../redux/slices/productSlice";
@@ -88,7 +87,6 @@ const HeroSection1 = () => {
         <div>
           {isShopRoute ? (
             <div className="p-4 rounded-full">
-              {/* <MdArrowForwardIos className="text-lg font-bold" /> */}
             </div>
           ) : (
             <div className="flex flex-col gap-2 justify-center items-center">
@@ -96,7 +94,7 @@ const HeroSection1 = () => {
                 Showing 1-4 of {} results
               </p>
 
-              <div>
+              <div className="z-10">
                 <label htmlFor="sortBy"></label>
                 <select
                 onChange={sortChangeHandler}

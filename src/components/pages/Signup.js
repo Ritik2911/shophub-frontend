@@ -2,10 +2,12 @@ import React, {useState} from "react";
 import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LoginAPI = 'https://shophub-sy21.onrender.com/api/auth/signup'
 
 const Signup = () => {
+  const navigate = useNavigate();
   const theme = useSelector((state) => state.theme);
   const [userData, setUserData] = useState({email:"", password:"",confirmPassword:""});
 
@@ -26,8 +28,11 @@ const Signup = () => {
     try {
       const response = await axios.post(LoginAPI,userData);
       setUserData({email:"", password:"",confirmPassword:""});
+      toast.success("Sign Up Successful");
+      navigate('/');
       console.log(response);
     } catch (error) {
+      toast.error("Sign Up failed");
       console.log("Error in Post");
     }
     toast.dismiss(toastId);
