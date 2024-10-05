@@ -24,7 +24,7 @@ const ProductCard = ({ product, index }) => {
 
   return (
     <div
-      className={`w-fit flex flex-col items-center hover:scale-105 transition-all duration-100 ease-in  gap-4 py-4 px-8 rounded-3xl ${
+      className={`w-fit flex flex-col items-center hover:scale-105 transition-all duration-50 ease-in  gap-4 py-4 px-8 rounded-3xl ${
         theme ? "dotted-light" : "dotted-dark"
       }`}
     >
